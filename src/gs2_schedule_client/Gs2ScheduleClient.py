@@ -338,7 +338,6 @@ class Gs2ScheduleClient(AbstractGs2Client):
 
         }
         headers = { 
-            "X-GS2-ACCESS-TOKEN": request.get_access_token()
         }
         from gs2_schedule_client.control.DescribeTriggerRequest import DescribeTriggerRequest
 
