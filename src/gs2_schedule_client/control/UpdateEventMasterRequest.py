@@ -14,11 +14,11 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 
-from gs2_core_client.Gs2UserRequest import Gs2UserRequest
+from gs2_core_client.Gs2BasicRequest import Gs2BasicRequest
 from gs2_schedule_client.Gs2Schedule import Gs2Schedule
 
 
-class UpdateEventMasterRequest(Gs2UserRequest):
+class UpdateEventMasterRequest(Gs2BasicRequest):
 
     class Constant(Gs2Schedule):
         FUNCTION = "UpdateEventMaster"
@@ -63,8 +63,6 @@ class UpdateEventMasterRequest(Gs2UserRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
-        if not isinstance(schedule_name, unicode):
-            raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
     def with_schedule_name(self, schedule_name):
@@ -92,8 +90,6 @@ class UpdateEventMasterRequest(Gs2UserRequest):
         :param event_name: イベント名を指定します。
         :type event_name: unicode
         """
-        if not isinstance(event_name, unicode):
-            raise TypeError(type(event_name))
         self.__event_name = event_name
 
     def with_event_name(self, event_name):
@@ -121,8 +117,6 @@ class UpdateEventMasterRequest(Gs2UserRequest):
         :param meta: メタデータ
         :type meta: unicode
         """
-        if not isinstance(meta, unicode):
-            raise TypeError(type(meta))
         self.__meta = meta
 
     def with_meta(self, meta):
@@ -150,8 +144,6 @@ class UpdateEventMasterRequest(Gs2UserRequest):
         :param type: 期間
         :type type: unicode
         """
-        if not isinstance(type, unicode):
-            raise TypeError(type(type))
         self.__type = type
 
     def with_type(self, type):
@@ -179,8 +171,6 @@ class UpdateEventMasterRequest(Gs2UserRequest):
         :param absolute_begin: 絶対時間を選択した場合の開始日時
         :type absolute_begin: int
         """
-        if not isinstance(absolute_begin, int):
-            raise TypeError(type(absolute_begin))
         self.__absolute_begin = absolute_begin
 
     def with_absolute_begin(self, absolute_begin):
@@ -208,8 +198,6 @@ class UpdateEventMasterRequest(Gs2UserRequest):
         :param absolute_end: 絶対時間を選択した場合の終了日時
         :type absolute_end: int
         """
-        if not isinstance(absolute_end, int):
-            raise TypeError(type(absolute_end))
         self.__absolute_end = absolute_end
 
     def with_absolute_end(self, absolute_end):
@@ -237,8 +225,6 @@ class UpdateEventMasterRequest(Gs2UserRequest):
         :param relative_trigger_name: 相対時間を選択した場合の開始トリガー名
         :type relative_trigger_name: unicode
         """
-        if not isinstance(relative_trigger_name, unicode):
-            raise TypeError(type(relative_trigger_name))
         self.__relative_trigger_name = relative_trigger_name
 
     def with_relative_trigger_name(self, relative_trigger_name):
@@ -266,8 +252,6 @@ class UpdateEventMasterRequest(Gs2UserRequest):
         :param relative_span: 相対時間を選択した場合のトリガーを引いてからのイベント期間(分)
         :type relative_span: int
         """
-        if not isinstance(relative_span, int):
-            raise TypeError(type(relative_span))
         self.__relative_span = relative_span
 
     def with_relative_span(self, relative_span):

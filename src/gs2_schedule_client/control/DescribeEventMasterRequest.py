@@ -14,11 +14,11 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 
-from gs2_core_client.Gs2UserRequest import Gs2UserRequest
+from gs2_core_client.Gs2BasicRequest import Gs2BasicRequest
 from gs2_schedule_client.Gs2Schedule import Gs2Schedule
 
 
-class DescribeEventMasterRequest(Gs2UserRequest):
+class DescribeEventMasterRequest(Gs2BasicRequest):
 
     class Constant(Gs2Schedule):
         FUNCTION = "DescribeEventMaster"
@@ -53,8 +53,6 @@ class DescribeEventMasterRequest(Gs2UserRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
-        if not isinstance(schedule_name, unicode):
-            raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
     def with_schedule_name(self, schedule_name):
@@ -82,8 +80,6 @@ class DescribeEventMasterRequest(Gs2UserRequest):
         :param page_token: データの取得を開始する位置を指定するトークン
         :type page_token: unicode
         """
-        if not isinstance(page_token, unicode):
-            raise TypeError(type(page_token))
         self.__page_token = page_token
 
     def with_page_token(self, page_token):
@@ -111,8 +107,6 @@ class DescribeEventMasterRequest(Gs2UserRequest):
         :param limit: データの取得件数
         :type limit: int
         """
-        if not isinstance(limit, int):
-            raise TypeError(type(limit))
         self.__limit = limit
 
     def with_limit(self, limit):

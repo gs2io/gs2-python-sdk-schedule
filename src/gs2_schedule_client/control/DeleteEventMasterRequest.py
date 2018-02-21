@@ -14,11 +14,11 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 
-from gs2_core_client.Gs2UserRequest import Gs2UserRequest
+from gs2_core_client.Gs2BasicRequest import Gs2BasicRequest
 from gs2_schedule_client.Gs2Schedule import Gs2Schedule
 
 
-class DeleteEventMasterRequest(Gs2UserRequest):
+class DeleteEventMasterRequest(Gs2BasicRequest):
 
     class Constant(Gs2Schedule):
         FUNCTION = "DeleteEventMaster"
@@ -51,8 +51,6 @@ class DeleteEventMasterRequest(Gs2UserRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
-        if not isinstance(schedule_name, unicode):
-            raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
     def with_schedule_name(self, schedule_name):
@@ -80,8 +78,6 @@ class DeleteEventMasterRequest(Gs2UserRequest):
         :param event_name: イベント名を指定します。
         :type event_name: unicode
         """
-        if not isinstance(event_name, unicode):
-            raise TypeError(type(event_name))
         self.__event_name = event_name
 
     def with_event_name(self, event_name):

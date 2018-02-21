@@ -14,11 +14,11 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 
-from gs2_core_client.Gs2UserRequest import Gs2UserRequest
+from gs2_core_client.Gs2BasicRequest import Gs2BasicRequest
 from gs2_schedule_client.Gs2Schedule import Gs2Schedule
 
 
-class DeleteTriggerRequest(Gs2UserRequest):
+class DeleteTriggerRequest(Gs2BasicRequest):
 
     class Constant(Gs2Schedule):
         FUNCTION = "DeleteTrigger"
@@ -53,8 +53,6 @@ class DeleteTriggerRequest(Gs2UserRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
-        if not isinstance(schedule_name, unicode):
-            raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
     def with_schedule_name(self, schedule_name):
@@ -82,8 +80,6 @@ class DeleteTriggerRequest(Gs2UserRequest):
         :param user_id: ユーザIDを指定します。
         :type user_id: unicode
         """
-        if not isinstance(user_id, unicode):
-            raise TypeError(type(user_id))
         self.__user_id = user_id
 
     def with_user_id(self, user_id):
@@ -111,8 +107,6 @@ class DeleteTriggerRequest(Gs2UserRequest):
         :param trigger_name: トリガー名を指定します。
         :type trigger_name: unicode
         """
-        if not isinstance(trigger_name, unicode):
-            raise TypeError(type(trigger_name))
         self.__trigger_name = trigger_name
 
     def with_trigger_name(self, trigger_name):

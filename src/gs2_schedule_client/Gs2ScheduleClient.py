@@ -61,6 +61,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
             body["relativeSpan"] = request.get_relative_span()
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.CreateEventMasterRequest import CreateEventMasterRequest
 
         from gs2_schedule_client.control.CreateEventMasterResult import CreateEventMasterResult
@@ -93,6 +95,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
             body["description"] = request.get_description()
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.CreateScheduleRequest import CreateScheduleRequest
 
         from gs2_schedule_client.control.CreateScheduleResult import CreateScheduleResult
@@ -120,8 +124,9 @@ class Gs2ScheduleClient(AbstractGs2Client):
 
         }
         headers = { 
-            "X-GS2-ACCESS-TOKEN": request.get_access_token()
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DeleteEventMasterRequest import DeleteEventMasterRequest
 
         self._do_delete_request(
@@ -149,6 +154,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
         }
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DeleteScheduleRequest import DeleteScheduleRequest
 
         self._do_delete_request(
@@ -175,8 +182,9 @@ class Gs2ScheduleClient(AbstractGs2Client):
 
         }
         headers = { 
-            "X-GS2-ACCESS-TOKEN": request.get_access_token()
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DeleteTriggerRequest import DeleteTriggerRequest
 
         self._do_delete_request(
@@ -208,6 +216,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
         headers = { 
             "X-GS2-ACCESS-TOKEN": request.get_access_token()
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DescribeEventRequest import DescribeEventRequest
 
         from gs2_schedule_client.control.DescribeEventResult import DescribeEventResult
@@ -239,6 +249,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
         }
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DescribeEventByUserIdRequest import DescribeEventByUserIdRequest
 
         from gs2_schedule_client.control.DescribeEventByUserIdResult import DescribeEventByUserIdResult
@@ -271,8 +283,9 @@ class Gs2ScheduleClient(AbstractGs2Client):
 
         }
         headers = { 
-            "X-GS2-ACCESS-TOKEN": request.get_access_token()
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DescribeEventMasterRequest import DescribeEventMasterRequest
 
         from gs2_schedule_client.control.DescribeEventMasterResult import DescribeEventMasterResult
@@ -306,6 +319,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
         }
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DescribeScheduleRequest import DescribeScheduleRequest
 
         from gs2_schedule_client.control.DescribeScheduleResult import DescribeScheduleResult
@@ -339,6 +354,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
         }
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DescribeTriggerRequest import DescribeTriggerRequest
 
         from gs2_schedule_client.control.DescribeTriggerResult import DescribeTriggerResult
@@ -371,8 +388,9 @@ class Gs2ScheduleClient(AbstractGs2Client):
 
         }
         headers = { 
-            "X-GS2-ACCESS-TOKEN": request.get_access_token()
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DescribeTriggerByUserIdRequest import DescribeTriggerByUserIdRequest
 
         from gs2_schedule_client.control.DescribeTriggerByUserIdResult import DescribeTriggerByUserIdResult
@@ -402,6 +420,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
         }
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.ExportMasterRequest import ExportMasterRequest
 
         from gs2_schedule_client.control.ExportMasterResult import ExportMasterResult
@@ -431,6 +451,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
         }
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.GetCurrentEventMasterRequest import GetCurrentEventMasterRequest
 
         from gs2_schedule_client.control.GetCurrentEventMasterResult import GetCurrentEventMasterResult
@@ -461,6 +483,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
         headers = { 
             "X-GS2-ACCESS-TOKEN": request.get_access_token()
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.GetEventRequest import GetEventRequest
 
         from gs2_schedule_client.control.GetEventResult import GetEventResult
@@ -490,6 +514,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
         }
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.GetEventByUserIdRequest import GetEventByUserIdRequest
 
         from gs2_schedule_client.control.GetEventByUserIdResult import GetEventByUserIdResult
@@ -519,6 +545,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
         }
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.GetEventMasterRequest import GetEventMasterRequest
 
         from gs2_schedule_client.control.GetEventMasterResult import GetEventMasterResult
@@ -548,6 +576,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
         }
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.GetScheduleRequest import GetScheduleRequest
 
         from gs2_schedule_client.control.GetScheduleResult import GetScheduleResult
@@ -577,6 +607,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
         }
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.GetScheduleStatusRequest import GetScheduleStatusRequest
 
         from gs2_schedule_client.control.GetScheduleStatusResult import GetScheduleStatusResult
@@ -606,6 +638,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
         }
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.GetTriggerRequest import GetTriggerRequest
 
         from gs2_schedule_client.control.GetTriggerResult import GetTriggerResult
@@ -637,6 +671,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
             body["ttl"] = request.get_ttl()
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.PullTriggerRequest import PullTriggerRequest
 
         from gs2_schedule_client.control.PullTriggerResult import PullTriggerResult
@@ -667,6 +703,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
 
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.UpdateCurrentEventMasterRequest import UpdateCurrentEventMasterRequest
 
         from gs2_schedule_client.control.UpdateCurrentEventMasterResult import UpdateCurrentEventMasterResult
@@ -705,8 +743,9 @@ class Gs2ScheduleClient(AbstractGs2Client):
         if request.get_relative_span() is not None:
             body["relativeSpan"] = request.get_relative_span()
         headers = { 
-            "X-GS2-ACCESS-TOKEN": request.get_access_token()
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.UpdateEventMasterRequest import UpdateEventMasterRequest
 
         from gs2_schedule_client.control.UpdateEventMasterResult import UpdateEventMasterResult
@@ -737,6 +776,8 @@ class Gs2ScheduleClient(AbstractGs2Client):
             body["description"] = request.get_description()
         headers = { 
         }
+        if request.get_request_id() is not None:
+            headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.UpdateScheduleRequest import UpdateScheduleRequest
 
         from gs2_schedule_client.control.UpdateScheduleResult import UpdateScheduleResult
