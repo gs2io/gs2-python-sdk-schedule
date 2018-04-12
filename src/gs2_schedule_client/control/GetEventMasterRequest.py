@@ -32,9 +32,11 @@ class GetEventMasterRequest(Gs2BasicRequest):
         super(GetEventMasterRequest, self).__init__(params)
         if params is None:
             self.__schedule_name = None
-            self.__event_name = None
         else:
             self.set_schedule_name(params['scheduleName'] if 'scheduleName' in params.keys() else None)
+        if params is None:
+            self.__event_name = None
+        else:
             self.set_event_name(params['eventName'] if 'eventName' in params.keys() else None)
 
     def get_schedule_name(self):
@@ -51,6 +53,8 @@ class GetEventMasterRequest(Gs2BasicRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
+        if not isinstance(schedule_name, unicode):
+            raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
     def with_schedule_name(self, schedule_name):
@@ -78,6 +82,8 @@ class GetEventMasterRequest(Gs2BasicRequest):
         :param event_name: イベント名を指定します。
         :type event_name: unicode
         """
+        if not isinstance(event_name, unicode):
+            raise TypeError(type(event_name))
         self.__event_name = event_name
 
     def with_event_name(self, event_name):

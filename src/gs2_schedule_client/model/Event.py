@@ -14,6 +14,7 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 
+
 class Event(object):
 
     def __init__(self, params=None):
@@ -27,7 +28,6 @@ class Event(object):
             self.set_meta(params['meta'] if 'meta' in params.keys() else None)
             self.set_begin(params['begin'] if 'begin' in params.keys() else None)
             self.set_end(params['end'] if 'end' in params.keys() else None)
-
 
     def get_name(self):
         """
@@ -94,7 +94,7 @@ class Event(object):
         self.__end = end
 
     def to_dict(self):
-        return { 
+        return {
             "name": self.__name,
             "meta": self.__meta,
             "begin": self.__begin,

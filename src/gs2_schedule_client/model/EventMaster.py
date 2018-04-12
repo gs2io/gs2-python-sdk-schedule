@@ -14,6 +14,7 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 
+
 class EventMaster(object):
 
     def __init__(self, params=None):
@@ -39,7 +40,6 @@ class EventMaster(object):
             self.set_relative_span(params['relativeSpan'] if 'relativeSpan' in params.keys() else None)
             self.set_create_at(params['createAt'] if 'createAt' in params.keys() else None)
             self.set_update_at(params['updateAt'] if 'updateAt' in params.keys() else None)
-
 
     def get_event_master_id(self):
         """
@@ -88,22 +88,6 @@ class EventMaster(object):
         :type meta: unicode
         """
         self.__meta = meta
-
-    def get_type(self):
-        """
-        期間を取得
-        :return: 期間
-        :rtype: unicode
-        """
-        return self.__type
-
-    def set_type(self, type):
-        """
-        期間を設定
-        :param type: 期間
-        :type type: unicode
-        """
-        self.__type = type
 
     def get_absolute_begin(self):
         """
@@ -201,8 +185,24 @@ class EventMaster(object):
         """
         self.__update_at = update_at
 
+    def get_type(self):
+        """
+        期間を取得
+        :return: 期間
+        :rtype: unicode
+        """
+        return self.__type
+
+    def set_type(self, _type):
+        """
+        期間を設定
+        :param _type: 期間
+        :type _type: unicode
+        """
+        self.__type = _type
+
     def to_dict(self):
-        return { 
+        return {
             "eventMasterId": self.__event_master_id,
             "name": self.__name,
             "meta": self.__meta,

@@ -32,9 +32,11 @@ class UpdateScheduleRequest(Gs2BasicRequest):
         super(UpdateScheduleRequest, self).__init__(params)
         if params is None:
             self.__schedule_name = None
-            self.__description = None
         else:
             self.set_schedule_name(params['scheduleName'] if 'scheduleName' in params.keys() else None)
+        if params is None:
+            self.__description = None
+        else:
             self.set_description(params['description'] if 'description' in params.keys() else None)
 
     def get_schedule_name(self):
@@ -51,6 +53,8 @@ class UpdateScheduleRequest(Gs2BasicRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
+        if not isinstance(schedule_name, unicode):
+            raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
     def with_schedule_name(self, schedule_name):
@@ -78,6 +82,8 @@ class UpdateScheduleRequest(Gs2BasicRequest):
         :param description: 説明文
         :type description: unicode
         """
+        if not isinstance(description, unicode):
+            raise TypeError(type(description))
         self.__description = description
 
     def with_description(self, description):

@@ -32,11 +32,15 @@ class DescribeEventByUserIdRequest(Gs2BasicRequest):
         super(DescribeEventByUserIdRequest, self).__init__(params)
         if params is None:
             self.__schedule_name = None
-            self.__user_id = None
-            self.__event_names = None
         else:
             self.set_schedule_name(params['scheduleName'] if 'scheduleName' in params.keys() else None)
+        if params is None:
+            self.__user_id = None
+        else:
             self.set_user_id(params['userId'] if 'userId' in params.keys() else None)
+        if params is None:
+            self.__event_names = None
+        else:
             self.set_event_names(params['eventNames'] if 'eventNames' in params.keys() else None)
 
     def get_schedule_name(self):
@@ -53,6 +57,8 @@ class DescribeEventByUserIdRequest(Gs2BasicRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
+        if not isinstance(schedule_name, unicode):
+            raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
     def with_schedule_name(self, schedule_name):
@@ -80,6 +86,8 @@ class DescribeEventByUserIdRequest(Gs2BasicRequest):
         :param user_id: ユーザIDを指定します。
         :type user_id: unicode
         """
+        if not isinstance(user_id, unicode):
+            raise TypeError(type(user_id))
         self.__user_id = user_id
 
     def with_user_id(self, user_id):
@@ -107,6 +115,8 @@ class DescribeEventByUserIdRequest(Gs2BasicRequest):
         :param event_names: 取得するイベント名をカンマ区切りのリストで指定する
         :type event_names: unicode
         """
+        if not isinstance(event_names, unicode):
+            raise TypeError(type(event_names))
         self.__event_names = event_names
 
     def with_event_names(self, event_names):

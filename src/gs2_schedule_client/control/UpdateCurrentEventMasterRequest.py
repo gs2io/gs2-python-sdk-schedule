@@ -32,9 +32,11 @@ class UpdateCurrentEventMasterRequest(Gs2BasicRequest):
         super(UpdateCurrentEventMasterRequest, self).__init__(params)
         if params is None:
             self.__schedule_name = None
-            self.__settings = None
         else:
             self.set_schedule_name(params['scheduleName'] if 'scheduleName' in params.keys() else None)
+        if params is None:
+            self.__settings = None
+        else:
             self.set_settings(params['settings'] if 'settings' in params.keys() else None)
 
     def get_schedule_name(self):
@@ -51,6 +53,8 @@ class UpdateCurrentEventMasterRequest(Gs2BasicRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
+        if not isinstance(schedule_name, unicode):
+            raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
     def with_schedule_name(self, schedule_name):
@@ -78,6 +82,8 @@ class UpdateCurrentEventMasterRequest(Gs2BasicRequest):
         :param settings: イベントマスターデータ
         :type settings: unicode
         """
+        if not isinstance(settings, unicode):
+            raise TypeError(type(settings))
         self.__settings = settings
 
     def with_settings(self, settings):

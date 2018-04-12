@@ -32,15 +32,23 @@ class PullTriggerRequest(Gs2BasicRequest):
         super(PullTriggerRequest, self).__init__(params)
         if params is None:
             self.__schedule_name = None
-            self.__user_id = None
-            self.__trigger_name = None
-            self.__action = None
-            self.__ttl = None
         else:
             self.set_schedule_name(params['scheduleName'] if 'scheduleName' in params.keys() else None)
+        if params is None:
+            self.__user_id = None
+        else:
             self.set_user_id(params['userId'] if 'userId' in params.keys() else None)
+        if params is None:
+            self.__trigger_name = None
+        else:
             self.set_trigger_name(params['triggerName'] if 'triggerName' in params.keys() else None)
+        if params is None:
+            self.__action = None
+        else:
             self.set_action(params['action'] if 'action' in params.keys() else None)
+        if params is None:
+            self.__ttl = None
+        else:
             self.set_ttl(params['ttl'] if 'ttl' in params.keys() else None)
 
     def get_schedule_name(self):
@@ -57,6 +65,8 @@ class PullTriggerRequest(Gs2BasicRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
+        if not isinstance(schedule_name, unicode):
+            raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
     def with_schedule_name(self, schedule_name):
@@ -84,6 +94,8 @@ class PullTriggerRequest(Gs2BasicRequest):
         :param user_id: ユーザIDを指定します。
         :type user_id: unicode
         """
+        if not isinstance(user_id, unicode):
+            raise TypeError(type(user_id))
         self.__user_id = user_id
 
     def with_user_id(self, user_id):
@@ -111,6 +123,8 @@ class PullTriggerRequest(Gs2BasicRequest):
         :param trigger_name: トリガーの名前を指定します。
         :type trigger_name: unicode
         """
+        if not isinstance(trigger_name, unicode):
+            raise TypeError(type(trigger_name))
         self.__trigger_name = trigger_name
 
     def with_trigger_name(self, trigger_name):
@@ -138,6 +152,8 @@ class PullTriggerRequest(Gs2BasicRequest):
         :param action: 既にトリガーが引かれていた時の振る舞い
         :type action: unicode
         """
+        if not isinstance(action, unicode):
+            raise TypeError(type(action))
         self.__action = action
 
     def with_action(self, action):
@@ -165,6 +181,8 @@ class PullTriggerRequest(Gs2BasicRequest):
         :param ttl: action に if_expired_pull_again を指定したときに使用するトリガーの有効期間(分)
         :type ttl: int
         """
+        if not isinstance(ttl, int):
+            raise TypeError(type(ttl))
         self.__ttl = ttl
 
     def with_ttl(self, ttl):

@@ -32,11 +32,15 @@ class DeleteTriggerRequest(Gs2BasicRequest):
         super(DeleteTriggerRequest, self).__init__(params)
         if params is None:
             self.__schedule_name = None
-            self.__user_id = None
-            self.__trigger_name = None
         else:
             self.set_schedule_name(params['scheduleName'] if 'scheduleName' in params.keys() else None)
+        if params is None:
+            self.__user_id = None
+        else:
             self.set_user_id(params['userId'] if 'userId' in params.keys() else None)
+        if params is None:
+            self.__trigger_name = None
+        else:
             self.set_trigger_name(params['triggerName'] if 'triggerName' in params.keys() else None)
 
     def get_schedule_name(self):
@@ -53,6 +57,8 @@ class DeleteTriggerRequest(Gs2BasicRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
+        if not isinstance(schedule_name, unicode):
+            raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
     def with_schedule_name(self, schedule_name):
@@ -80,6 +86,8 @@ class DeleteTriggerRequest(Gs2BasicRequest):
         :param user_id: ユーザIDを指定します。
         :type user_id: unicode
         """
+        if not isinstance(user_id, unicode):
+            raise TypeError(type(user_id))
         self.__user_id = user_id
 
     def with_user_id(self, user_id):
@@ -107,6 +115,8 @@ class DeleteTriggerRequest(Gs2BasicRequest):
         :param trigger_name: トリガー名を指定します。
         :type trigger_name: unicode
         """
+        if not isinstance(trigger_name, unicode):
+            raise TypeError(type(trigger_name))
         self.__trigger_name = trigger_name
 
     def with_trigger_name(self, trigger_name):

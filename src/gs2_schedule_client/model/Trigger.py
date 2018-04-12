@@ -14,6 +14,7 @@
 # express or implied. See the License for the specific language governing
 # permissions and limitations under the License.
 
+
 class Trigger(object):
 
     def __init__(self, params=None):
@@ -25,7 +26,6 @@ class Trigger(object):
             self.set_user_id(params['userId'] if 'userId' in params.keys() else None)
             self.set_trigger_name(params['triggerName'] if 'triggerName' in params.keys() else None)
             self.set_trigger_at(params['triggerAt'] if 'triggerAt' in params.keys() else None)
-
 
     def get_user_id(self):
         """
@@ -76,7 +76,7 @@ class Trigger(object):
         self.__trigger_at = trigger_at
 
     def to_dict(self):
-        return { 
+        return {
             "userId": self.__user_id,
             "triggerName": self.__trigger_name,
             "triggerAt": self.__trigger_at,
