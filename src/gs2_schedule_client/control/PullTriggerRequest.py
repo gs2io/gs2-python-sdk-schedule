@@ -65,7 +65,7 @@ class PullTriggerRequest(Gs2BasicRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
-        if not isinstance(schedule_name, unicode):
+        if schedule_name and not isinstance(schedule_name, unicode):
             raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
@@ -94,7 +94,7 @@ class PullTriggerRequest(Gs2BasicRequest):
         :param user_id: ユーザIDを指定します。
         :type user_id: unicode
         """
-        if not isinstance(user_id, unicode):
+        if user_id and not isinstance(user_id, unicode):
             raise TypeError(type(user_id))
         self.__user_id = user_id
 
@@ -123,7 +123,7 @@ class PullTriggerRequest(Gs2BasicRequest):
         :param trigger_name: トリガーの名前を指定します。
         :type trigger_name: unicode
         """
-        if not isinstance(trigger_name, unicode):
+        if trigger_name and not isinstance(trigger_name, unicode):
             raise TypeError(type(trigger_name))
         self.__trigger_name = trigger_name
 
@@ -152,7 +152,7 @@ class PullTriggerRequest(Gs2BasicRequest):
         :param action: 既にトリガーが引かれていた時の振る舞い
         :type action: unicode
         """
-        if not isinstance(action, unicode):
+        if action and not isinstance(action, unicode):
             raise TypeError(type(action))
         self.__action = action
 
@@ -181,7 +181,7 @@ class PullTriggerRequest(Gs2BasicRequest):
         :param ttl: action に if_expired_pull_again を指定したときに使用するトリガーの有効期間(分)
         :type ttl: int
         """
-        if not isinstance(ttl, int):
+        if ttl and not isinstance(ttl, int):
             raise TypeError(type(ttl))
         self.__ttl = ttl
 

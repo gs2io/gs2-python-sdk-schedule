@@ -53,7 +53,7 @@ class UpdateScheduleRequest(Gs2BasicRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
-        if not isinstance(schedule_name, unicode):
+        if schedule_name and not isinstance(schedule_name, unicode):
             raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
@@ -82,7 +82,7 @@ class UpdateScheduleRequest(Gs2BasicRequest):
         :param description: 説明文
         :type description: unicode
         """
-        if not isinstance(description, unicode):
+        if description and not isinstance(description, unicode):
             raise TypeError(type(description))
         self.__description = description
 

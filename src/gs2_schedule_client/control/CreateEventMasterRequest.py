@@ -77,7 +77,7 @@ class CreateEventMasterRequest(Gs2BasicRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
-        if not isinstance(schedule_name, unicode):
+        if schedule_name and not isinstance(schedule_name, unicode):
             raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
@@ -106,7 +106,7 @@ class CreateEventMasterRequest(Gs2BasicRequest):
         :param name: イベントマスター名
         :type name: unicode
         """
-        if not isinstance(name, unicode):
+        if name and not isinstance(name, unicode):
             raise TypeError(type(name))
         self.__name = name
 
@@ -135,7 +135,7 @@ class CreateEventMasterRequest(Gs2BasicRequest):
         :param meta: メタデータ
         :type meta: unicode
         """
-        if not isinstance(meta, unicode):
+        if meta and not isinstance(meta, unicode):
             raise TypeError(type(meta))
         self.__meta = meta
 
@@ -164,7 +164,7 @@ class CreateEventMasterRequest(Gs2BasicRequest):
         :param absolute_begin: 絶対時間を選択した場合の開始日時
         :type absolute_begin: int
         """
-        if not isinstance(absolute_begin, int):
+        if absolute_begin and not isinstance(absolute_begin, int):
             raise TypeError(type(absolute_begin))
         self.__absolute_begin = absolute_begin
 
@@ -193,7 +193,7 @@ class CreateEventMasterRequest(Gs2BasicRequest):
         :param absolute_end: 絶対時間を選択した場合の終了日時
         :type absolute_end: int
         """
-        if not isinstance(absolute_end, int):
+        if absolute_end and not isinstance(absolute_end, int):
             raise TypeError(type(absolute_end))
         self.__absolute_end = absolute_end
 
@@ -222,7 +222,7 @@ class CreateEventMasterRequest(Gs2BasicRequest):
         :param relative_trigger_name: 相対時間を選択した場合の開始トリガー名
         :type relative_trigger_name: unicode
         """
-        if not isinstance(relative_trigger_name, unicode):
+        if relative_trigger_name and not isinstance(relative_trigger_name, unicode):
             raise TypeError(type(relative_trigger_name))
         self.__relative_trigger_name = relative_trigger_name
 
@@ -251,7 +251,7 @@ class CreateEventMasterRequest(Gs2BasicRequest):
         :param relative_span: 相対時間を選択した場合のトリガーを引いてからのイベント期間(分)
         :type relative_span: int
         """
-        if not isinstance(relative_span, int):
+        if relative_span and not isinstance(relative_span, int):
             raise TypeError(type(relative_span))
         self.__relative_span = relative_span
 
@@ -280,7 +280,7 @@ class CreateEventMasterRequest(Gs2BasicRequest):
         :param _type: 期間
         :type _type: unicode
         """
-        if not isinstance(_type, unicode):
+        if _type and not isinstance(_type, unicode):
             raise TypeError(type(_type))
         self.__type = _type
 

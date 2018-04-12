@@ -53,7 +53,7 @@ class UpdateCurrentEventMasterRequest(Gs2BasicRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
-        if not isinstance(schedule_name, unicode):
+        if schedule_name and not isinstance(schedule_name, unicode):
             raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
@@ -82,7 +82,7 @@ class UpdateCurrentEventMasterRequest(Gs2BasicRequest):
         :param settings: イベントマスターデータ
         :type settings: unicode
         """
-        if not isinstance(settings, unicode):
+        if settings and not isinstance(settings, unicode):
             raise TypeError(type(settings))
         self.__settings = settings
 
