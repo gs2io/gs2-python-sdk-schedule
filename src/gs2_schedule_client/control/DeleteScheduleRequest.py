@@ -49,7 +49,7 @@ class DeleteScheduleRequest(Gs2BasicRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
-        if schedule_name and not isinstance(schedule_name, unicode):
+        if schedule_name and not (isinstance(schedule_name, str) or isinstance(schedule_name, unicode)):
             raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 

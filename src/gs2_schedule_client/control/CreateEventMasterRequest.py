@@ -77,7 +77,7 @@ class CreateEventMasterRequest(Gs2BasicRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
-        if schedule_name and not isinstance(schedule_name, unicode):
+        if schedule_name and not (isinstance(schedule_name, str) or isinstance(schedule_name, unicode)):
             raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
@@ -106,7 +106,7 @@ class CreateEventMasterRequest(Gs2BasicRequest):
         :param name: イベントマスター名
         :type name: unicode
         """
-        if name and not isinstance(name, unicode):
+        if name and not (isinstance(name, str) or isinstance(name, unicode)):
             raise TypeError(type(name))
         self.__name = name
 
@@ -135,7 +135,7 @@ class CreateEventMasterRequest(Gs2BasicRequest):
         :param meta: メタデータ
         :type meta: unicode
         """
-        if meta and not isinstance(meta, unicode):
+        if meta and not (isinstance(meta, str) or isinstance(meta, unicode)):
             raise TypeError(type(meta))
         self.__meta = meta
 
@@ -222,7 +222,7 @@ class CreateEventMasterRequest(Gs2BasicRequest):
         :param relative_trigger_name: 相対時間を選択した場合の開始トリガー名
         :type relative_trigger_name: unicode
         """
-        if relative_trigger_name and not isinstance(relative_trigger_name, unicode):
+        if relative_trigger_name and not (isinstance(relative_trigger_name, str) or isinstance(relative_trigger_name, unicode)):
             raise TypeError(type(relative_trigger_name))
         self.__relative_trigger_name = relative_trigger_name
 
@@ -280,7 +280,7 @@ class CreateEventMasterRequest(Gs2BasicRequest):
         :param _type: 期間
         :type _type: unicode
         """
-        if _type and not isinstance(_type, unicode):
+        if _type and not (isinstance(_type, str) or isinstance(_type, unicode)):
             raise TypeError(type(_type))
         self.__type = _type
 

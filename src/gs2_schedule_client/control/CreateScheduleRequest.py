@@ -53,7 +53,7 @@ class CreateScheduleRequest(Gs2BasicRequest):
         :param name: スケジュール名
         :type name: unicode
         """
-        if name and not isinstance(name, unicode):
+        if name and not (isinstance(name, str) or isinstance(name, unicode)):
             raise TypeError(type(name))
         self.__name = name
 
@@ -82,7 +82,7 @@ class CreateScheduleRequest(Gs2BasicRequest):
         :param description: 説明文
         :type description: unicode
         """
-        if description and not isinstance(description, unicode):
+        if description and not (isinstance(description, str) or isinstance(description, unicode)):
             raise TypeError(type(description))
         self.__description = description
 
