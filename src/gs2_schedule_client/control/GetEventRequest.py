@@ -51,7 +51,7 @@ class GetEventRequest(Gs2UserRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
-        if _schedule_name and not (isinstance(_schedule_name, str) or isinstance(_schedule_name, unicode)):
+        if schedule_name and not (isinstance(schedule_name, str) or isinstance(schedule_name, unicode)):
             raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
@@ -80,7 +80,7 @@ class GetEventRequest(Gs2UserRequest):
         :param event_name: イベント名を指定します。
         :type event_name: unicode
         """
-        if _event_name and not (isinstance(_event_name, str) or isinstance(_event_name, unicode)):
+        if event_name and not (isinstance(event_name, str) or isinstance(event_name, unicode)):
             raise TypeError(type(event_name))
         self.__event_name = event_name
 
