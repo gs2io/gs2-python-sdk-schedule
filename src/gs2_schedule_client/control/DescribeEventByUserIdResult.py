@@ -32,7 +32,6 @@ class DescribeEventByUserIdResult(object):
                 response['items']
             )
         )
-
     def get_items(self):
         """
         イベントを取得
@@ -40,6 +39,12 @@ class DescribeEventByUserIdResult(object):
         :rtype: list[Event]
         """
         return self.__items
+
+    def __getitem__(self, key):
+        items = self.to_dict()
+        if key in items.keys():
+            return items[key]
+        return super(DescribeEventByUserIdResult, self).__getitem__(key)
 
     def to_dict(self):
         """

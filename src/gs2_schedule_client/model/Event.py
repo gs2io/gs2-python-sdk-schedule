@@ -93,6 +93,12 @@ class Event(object):
         """
         self.__end = end
 
+    def __getitem__(self, key):
+        items = self.to_dict()
+        if key in items.keys():
+            return items[key]
+        return super(Event, self).__getitem__(key)
+
     def to_dict(self):
         return {
             "name": self.__name,
