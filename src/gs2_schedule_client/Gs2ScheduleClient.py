@@ -41,17 +41,15 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_schedule_client.control.GetCurrentEventMasterResult.GetCurrentEventMasterResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.GetCurrentEventMasterRequest import GetCurrentEventMasterRequest
 
         from gs2_schedule_client.control.GetCurrentEventMasterResult import GetCurrentEventMasterResult
         return GetCurrentEventMasterResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/event/master",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/event/master",
             service=self.ENDPOINT,
             component=GetCurrentEventMasterRequest.Constant.MODULE,
             target_function=GetCurrentEventMasterRequest.Constant.FUNCTION,
@@ -72,14 +70,13 @@ class Gs2ScheduleClient(AbstractGs2Client):
             "settings": request.get_settings(),
         }
 
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.UpdateCurrentEventMasterRequest import UpdateCurrentEventMasterRequest
         from gs2_schedule_client.control.UpdateCurrentEventMasterResult import UpdateCurrentEventMasterResult
         return UpdateCurrentEventMasterResult(self._do_post_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/event/master",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/event/master",
             service=self.ENDPOINT,
             component=UpdateCurrentEventMasterRequest.Constant.MODULE,
             target_function=UpdateCurrentEventMasterRequest.Constant.FUNCTION,
@@ -111,14 +108,13 @@ class Gs2ScheduleClient(AbstractGs2Client):
             body["relativeTriggerName"] = request.get_relative_trigger_name()
         if request.get_relative_span() is not None:
             body["relativeSpan"] = request.get_relative_span()
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.CreateEventMasterRequest import CreateEventMasterRequest
         from gs2_schedule_client.control.CreateEventMasterResult import CreateEventMasterResult
         return CreateEventMasterResult(self._do_post_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/master/event",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/master/event",
             service=self.ENDPOINT,
             component=CreateEventMasterRequest.Constant.MODULE,
             target_function=CreateEventMasterRequest.Constant.FUNCTION,
@@ -134,13 +130,12 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :type request: gs2_schedule_client.control.DeleteEventMasterRequest.DeleteEventMasterRequest
         """
         query_strings = {}
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DeleteEventMasterRequest import DeleteEventMasterRequest
         self._do_delete_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/master/event/" + str(("null" if request.get_event_name() is None or request.get_event_name() == "" else url_encoder.encode(request.get_event_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/master/event/" + str(("null" if request.get_event_name() is None or request.get_event_name() == "" else request.get_event_name())) + "",
             service=self.ENDPOINT,
             component=DeleteEventMasterRequest.Constant.MODULE,
             target_function=DeleteEventMasterRequest.Constant.FUNCTION,
@@ -156,19 +151,19 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_schedule_client.control.DescribeEventMasterResult.DescribeEventMasterResult
         """
-        query_strings = {
-            'pageToken': request.get_page_token(),
-            'limit': request.get_limit(),
-        }
-        headers = { 
-        }
+        query_strings = {}
+        if request.get_page_token() is not None:
+            query_strings['pageToken'] = request.get_page_token()
+        if request.get_limit() is not None:
+            query_strings['limit'] = request.get_limit()
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DescribeEventMasterRequest import DescribeEventMasterRequest
 
         from gs2_schedule_client.control.DescribeEventMasterResult import DescribeEventMasterResult
         return DescribeEventMasterResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/master/event",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/master/event",
             service=self.ENDPOINT,
             component=DescribeEventMasterRequest.Constant.MODULE,
             target_function=DescribeEventMasterRequest.Constant.FUNCTION,
@@ -184,17 +179,15 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_schedule_client.control.GetEventMasterResult.GetEventMasterResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.GetEventMasterRequest import GetEventMasterRequest
 
         from gs2_schedule_client.control.GetEventMasterResult import GetEventMasterResult
         return GetEventMasterResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/master/event/" + str(("null" if request.get_event_name() is None or request.get_event_name() == "" else url_encoder.encode(request.get_event_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/master/event/" + str(("null" if request.get_event_name() is None or request.get_event_name() == "" else request.get_event_name())) + "",
             service=self.ENDPOINT,
             component=GetEventMasterRequest.Constant.MODULE,
             target_function=GetEventMasterRequest.Constant.FUNCTION,
@@ -224,14 +217,13 @@ class Gs2ScheduleClient(AbstractGs2Client):
             body["relativeTriggerName"] = request.get_relative_trigger_name()
         if request.get_relative_span() is not None:
             body["relativeSpan"] = request.get_relative_span()
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.UpdateEventMasterRequest import UpdateEventMasterRequest
         from gs2_schedule_client.control.UpdateEventMasterResult import UpdateEventMasterResult
         return UpdateEventMasterResult(self._do_put_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/master/event/" + str(("null" if request.get_event_name() is None or request.get_event_name() == "" else url_encoder.encode(request.get_event_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/master/event/" + str(("null" if request.get_event_name() is None or request.get_event_name() == "" else request.get_event_name())) + "",
             service=self.ENDPOINT,
             component=UpdateEventMasterRequest.Constant.MODULE,
             target_function=UpdateEventMasterRequest.Constant.FUNCTION,
@@ -247,19 +239,19 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_schedule_client.control.DescribeEventResult.DescribeEventResult
         """
-        query_strings = {
-            'eventNames': request.get_event_names(),
-        }
-        headers = { 
-            "X-GS2-ACCESS-TOKEN": request.get_access_token()
-        }
+        query_strings = {}
+        if request.get_event_names() is not None:
+            query_strings['eventNames'] = request.get_event_names()
+        headers = {}
+        if request.get_access_token() is not None:
+            headers["X-GS2-ACCESS-TOKEN"] = request.get_access_token()
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DescribeEventRequest import DescribeEventRequest
 
         from gs2_schedule_client.control.DescribeEventResult import DescribeEventResult
         return DescribeEventResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/event",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/event",
             service=self.ENDPOINT,
             component=DescribeEventRequest.Constant.MODULE,
             target_function=DescribeEventRequest.Constant.FUNCTION,
@@ -275,18 +267,17 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_schedule_client.control.DescribeEventByUserIdResult.DescribeEventByUserIdResult
         """
-        query_strings = {
-            'eventNames': request.get_event_names(),
-        }
-        headers = { 
-        }
+        query_strings = {}
+        if request.get_event_names() is not None:
+            query_strings['eventNames'] = request.get_event_names()
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DescribeEventByUserIdRequest import DescribeEventByUserIdRequest
 
         from gs2_schedule_client.control.DescribeEventByUserIdResult import DescribeEventByUserIdResult
         return DescribeEventByUserIdResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/event/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else url_encoder.encode(request.get_user_id()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/event/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else request.get_user_id())) + "",
             service=self.ENDPOINT,
             component=DescribeEventByUserIdRequest.Constant.MODULE,
             target_function=DescribeEventByUserIdRequest.Constant.FUNCTION,
@@ -302,18 +293,17 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_schedule_client.control.GetEventResult.GetEventResult
         """
-        query_strings = {
-        }
-        headers = { 
-            "X-GS2-ACCESS-TOKEN": request.get_access_token()
-        }
+        query_strings = {}
+        headers = {}
+        if request.get_access_token() is not None:
+            headers["X-GS2-ACCESS-TOKEN"] = request.get_access_token()
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.GetEventRequest import GetEventRequest
 
         from gs2_schedule_client.control.GetEventResult import GetEventResult
         return GetEventResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/event/" + str(("null" if request.get_event_name() is None or request.get_event_name() == "" else url_encoder.encode(request.get_event_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/event/" + str(("null" if request.get_event_name() is None or request.get_event_name() == "" else request.get_event_name())) + "",
             service=self.ENDPOINT,
             component=GetEventRequest.Constant.MODULE,
             target_function=GetEventRequest.Constant.FUNCTION,
@@ -329,17 +319,15 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_schedule_client.control.GetEventByUserIdResult.GetEventByUserIdResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.GetEventByUserIdRequest import GetEventByUserIdRequest
 
         from gs2_schedule_client.control.GetEventByUserIdResult import GetEventByUserIdResult
         return GetEventByUserIdResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/event/" + str(("null" if request.get_event_name() is None or request.get_event_name() == "" else url_encoder.encode(request.get_event_name()))) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else url_encoder.encode(request.get_user_id()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/event/" + str(("null" if request.get_event_name() is None or request.get_event_name() == "" else request.get_event_name())) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else request.get_user_id())) + "",
             service=self.ENDPOINT,
             component=GetEventByUserIdRequest.Constant.MODULE,
             target_function=GetEventByUserIdRequest.Constant.FUNCTION,
@@ -355,17 +343,15 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_schedule_client.control.ExportMasterResult.ExportMasterResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.ExportMasterRequest import ExportMasterRequest
 
         from gs2_schedule_client.control.ExportMasterResult import ExportMasterResult
         return ExportMasterResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/master",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/master",
             service=self.ENDPOINT,
             component=ExportMasterRequest.Constant.MODULE,
             target_function=ExportMasterRequest.Constant.FUNCTION,
@@ -388,8 +374,7 @@ class Gs2ScheduleClient(AbstractGs2Client):
 
         if request.get_description() is not None:
             body["description"] = request.get_description()
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.CreateScheduleRequest import CreateScheduleRequest
@@ -411,13 +396,12 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :type request: gs2_schedule_client.control.DeleteScheduleRequest.DeleteScheduleRequest
         """
         query_strings = {}
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DeleteScheduleRequest import DeleteScheduleRequest
         self._do_delete_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "",
             service=self.ENDPOINT,
             component=DeleteScheduleRequest.Constant.MODULE,
             target_function=DeleteScheduleRequest.Constant.FUNCTION,
@@ -433,12 +417,12 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_schedule_client.control.DescribeScheduleResult.DescribeScheduleResult
         """
-        query_strings = {
-            'pageToken': request.get_page_token(),
-            'limit': request.get_limit(),
-        }
-        headers = { 
-        }
+        query_strings = {}
+        if request.get_page_token() is not None:
+            query_strings['pageToken'] = request.get_page_token()
+        if request.get_limit() is not None:
+            query_strings['limit'] = request.get_limit()
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DescribeScheduleRequest import DescribeScheduleRequest
@@ -461,17 +445,15 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_schedule_client.control.GetScheduleResult.GetScheduleResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.GetScheduleRequest import GetScheduleRequest
 
         from gs2_schedule_client.control.GetScheduleResult import GetScheduleResult
         return GetScheduleResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "",
             service=self.ENDPOINT,
             component=GetScheduleRequest.Constant.MODULE,
             target_function=GetScheduleRequest.Constant.FUNCTION,
@@ -487,17 +469,15 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_schedule_client.control.GetScheduleStatusResult.GetScheduleStatusResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.GetScheduleStatusRequest import GetScheduleStatusRequest
 
         from gs2_schedule_client.control.GetScheduleStatusResult import GetScheduleStatusResult
         return GetScheduleStatusResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/status",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/status",
             service=self.ENDPOINT,
             component=GetScheduleStatusRequest.Constant.MODULE,
             target_function=GetScheduleStatusRequest.Constant.FUNCTION,
@@ -518,14 +498,13 @@ class Gs2ScheduleClient(AbstractGs2Client):
         }
         if request.get_description() is not None:
             body["description"] = request.get_description()
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.UpdateScheduleRequest import UpdateScheduleRequest
         from gs2_schedule_client.control.UpdateScheduleResult import UpdateScheduleResult
         return UpdateScheduleResult(self._do_put_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "",
             service=self.ENDPOINT,
             component=UpdateScheduleRequest.Constant.MODULE,
             target_function=UpdateScheduleRequest.Constant.FUNCTION,
@@ -541,13 +520,12 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :type request: gs2_schedule_client.control.DeleteTriggerRequest.DeleteTriggerRequest
         """
         query_strings = {}
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DeleteTriggerRequest import DeleteTriggerRequest
         self._do_delete_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else url_encoder.encode(request.get_user_id()))) + "/trigger/" + str(("null" if request.get_trigger_name() is None or request.get_trigger_name() == "" else url_encoder.encode(request.get_trigger_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else request.get_user_id())) + "/trigger/" + str(("null" if request.get_trigger_name() is None or request.get_trigger_name() == "" else request.get_trigger_name())) + "",
             service=self.ENDPOINT,
             component=DeleteTriggerRequest.Constant.MODULE,
             target_function=DeleteTriggerRequest.Constant.FUNCTION,
@@ -563,19 +541,19 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_schedule_client.control.DescribeTriggerResult.DescribeTriggerResult
         """
-        query_strings = {
-            'pageToken': request.get_page_token(),
-            'limit': request.get_limit(),
-        }
-        headers = { 
-        }
+        query_strings = {}
+        if request.get_page_token() is not None:
+            query_strings['pageToken'] = request.get_page_token()
+        if request.get_limit() is not None:
+            query_strings['limit'] = request.get_limit()
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DescribeTriggerRequest import DescribeTriggerRequest
 
         from gs2_schedule_client.control.DescribeTriggerResult import DescribeTriggerResult
         return DescribeTriggerResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/trigger",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/trigger",
             service=self.ENDPOINT,
             component=DescribeTriggerRequest.Constant.MODULE,
             target_function=DescribeTriggerRequest.Constant.FUNCTION,
@@ -591,19 +569,19 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_schedule_client.control.DescribeTriggerByUserIdResult.DescribeTriggerByUserIdResult
         """
-        query_strings = {
-            'pageToken': request.get_page_token(),
-            'limit': request.get_limit(),
-        }
-        headers = { 
-        }
+        query_strings = {}
+        if request.get_page_token() is not None:
+            query_strings['pageToken'] = request.get_page_token()
+        if request.get_limit() is not None:
+            query_strings['limit'] = request.get_limit()
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.DescribeTriggerByUserIdRequest import DescribeTriggerByUserIdRequest
 
         from gs2_schedule_client.control.DescribeTriggerByUserIdResult import DescribeTriggerByUserIdResult
         return DescribeTriggerByUserIdResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else url_encoder.encode(request.get_user_id()))) + "/trigger",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else request.get_user_id())) + "/trigger",
             service=self.ENDPOINT,
             component=DescribeTriggerByUserIdRequest.Constant.MODULE,
             target_function=DescribeTriggerByUserIdRequest.Constant.FUNCTION,
@@ -619,17 +597,15 @@ class Gs2ScheduleClient(AbstractGs2Client):
         :return: 結果
         :rtype: gs2_schedule_client.control.GetTriggerResult.GetTriggerResult
         """
-        query_strings = {
-        }
-        headers = { 
-        }
+        query_strings = {}
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.GetTriggerRequest import GetTriggerRequest
 
         from gs2_schedule_client.control.GetTriggerResult import GetTriggerResult
         return GetTriggerResult(self._do_get_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else url_encoder.encode(request.get_user_id()))) + "/trigger/" + str(("null" if request.get_trigger_name() is None or request.get_trigger_name() == "" else url_encoder.encode(request.get_trigger_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else request.get_user_id())) + "/trigger/" + str(("null" if request.get_trigger_name() is None or request.get_trigger_name() == "" else request.get_trigger_name())) + "",
             service=self.ENDPOINT,
             component=GetTriggerRequest.Constant.MODULE,
             target_function=GetTriggerRequest.Constant.FUNCTION,
@@ -651,14 +627,13 @@ class Gs2ScheduleClient(AbstractGs2Client):
         }
         if request.get_ttl() is not None:
             body["ttl"] = request.get_ttl()
-        headers = { 
-        }
+        headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
         from gs2_schedule_client.control.PullTriggerRequest import PullTriggerRequest
         from gs2_schedule_client.control.PullTriggerResult import PullTriggerResult
         return PullTriggerResult(self._do_put_request(
-            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else url_encoder.encode(request.get_schedule_name()))) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else url_encoder.encode(request.get_user_id()))) + "/trigger/" + str(("null" if request.get_trigger_name() is None or request.get_trigger_name() == "" else url_encoder.encode(request.get_trigger_name()))) + "",
+            url=Gs2Constant.ENDPOINT_HOST + "/schedule/" + str(("null" if request.get_schedule_name() is None or request.get_schedule_name() == "" else request.get_schedule_name())) + "/user/" + str(("null" if request.get_user_id() is None or request.get_user_id() == "" else request.get_user_id())) + "/trigger/" + str(("null" if request.get_trigger_name() is None or request.get_trigger_name() == "" else request.get_trigger_name())) + "",
             service=self.ENDPOINT,
             component=PullTriggerRequest.Constant.MODULE,
             target_function=PullTriggerRequest.Constant.FUNCTION,

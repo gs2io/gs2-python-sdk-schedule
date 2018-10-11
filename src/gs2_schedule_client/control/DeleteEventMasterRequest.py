@@ -53,7 +53,7 @@ class DeleteEventMasterRequest(Gs2BasicRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
-        if schedule_name and not (isinstance(schedule_name, str) or isinstance(schedule_name, unicode)):
+        if schedule_name is not None and not (isinstance(schedule_name, str) or isinstance(schedule_name, unicode)):
             raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
@@ -82,7 +82,7 @@ class DeleteEventMasterRequest(Gs2BasicRequest):
         :param event_name: イベント名を指定します。
         :type event_name: unicode
         """
-        if event_name and not (isinstance(event_name, str) or isinstance(event_name, unicode)):
+        if event_name is not None and not (isinstance(event_name, str) or isinstance(event_name, unicode)):
             raise TypeError(type(event_name))
         self.__event_name = event_name
 

@@ -57,7 +57,7 @@ class DescribeEventByUserIdRequest(Gs2BasicRequest):
         :param schedule_name: スケジュールの名前を指定します。
         :type schedule_name: unicode
         """
-        if schedule_name and not (isinstance(schedule_name, str) or isinstance(schedule_name, unicode)):
+        if schedule_name is not None and not (isinstance(schedule_name, str) or isinstance(schedule_name, unicode)):
             raise TypeError(type(schedule_name))
         self.__schedule_name = schedule_name
 
@@ -86,7 +86,7 @@ class DescribeEventByUserIdRequest(Gs2BasicRequest):
         :param user_id: ユーザIDを指定します。
         :type user_id: unicode
         """
-        if user_id and not (isinstance(user_id, str) or isinstance(user_id, unicode)):
+        if user_id is not None and not (isinstance(user_id, str) or isinstance(user_id, unicode)):
             raise TypeError(type(user_id))
         self.__user_id = user_id
 
@@ -115,7 +115,7 @@ class DescribeEventByUserIdRequest(Gs2BasicRequest):
         :param event_names: 取得するイベント名をカンマ区切りのリストで指定する
         :type event_names: unicode
         """
-        if event_names and not (isinstance(event_names, str) or isinstance(event_names, unicode)):
+        if event_names is not None and not (isinstance(event_names, str) or isinstance(event_names, unicode)):
             raise TypeError(type(event_names))
         self.__event_names = event_names
 
