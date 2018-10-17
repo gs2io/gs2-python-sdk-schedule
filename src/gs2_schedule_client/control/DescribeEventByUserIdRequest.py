@@ -103,27 +103,27 @@ class DescribeEventByUserIdRequest(Gs2BasicRequest):
 
     def get_event_names(self):
         """
-        取得するイベント名をカンマ区切りのリストで指定するを取得
-        :return: 取得するイベント名をカンマ区切りのリストで指定する
-        :rtype: unicode
+        取得するイベント名のリストを取得
+        :return: 取得するイベント名のリスト
+        :rtype: list[unicode]
         """
         return self.__event_names
 
     def set_event_names(self, event_names):
         """
-        取得するイベント名をカンマ区切りのリストで指定するを設定
-        :param event_names: 取得するイベント名をカンマ区切りのリストで指定する
-        :type event_names: unicode
+        取得するイベント名のリストを設定
+        :param event_names: 取得するイベント名のリスト
+        :type event_names: list[unicode]
         """
-        if event_names is not None and not (isinstance(event_names, str) or isinstance(event_names, unicode)):
+        if event_names is not None and not isinstance(event_names, list):
             raise TypeError(type(event_names))
         self.__event_names = event_names
 
     def with_event_names(self, event_names):
         """
-        取得するイベント名をカンマ区切りのリストで指定するを設定
-        :param event_names: 取得するイベント名をカンマ区切りのリストで指定する
-        :type event_names: unicode
+        取得するイベント名のリストを設定
+        :param event_names: 取得するイベント名のリスト
+        :type event_names: list[unicode]
         :return: this
         :rtype: DescribeEventByUserIdRequest
         """

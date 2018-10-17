@@ -241,7 +241,7 @@ class Gs2ScheduleClient(AbstractGs2Client):
         """
         query_strings = {}
         if request.get_event_names() is not None:
-            query_strings['eventNames'] = request.get_event_names()
+            query_strings['eventNames'] = u','.join(request.get_event_names())
         headers = {}
         if request.get_access_token() is not None:
             headers["X-GS2-ACCESS-TOKEN"] = request.get_access_token()
@@ -269,7 +269,7 @@ class Gs2ScheduleClient(AbstractGs2Client):
         """
         query_strings = {}
         if request.get_event_names() is not None:
-            query_strings['eventNames'] = request.get_event_names()
+            query_strings['eventNames'] = u','.join(request.get_event_names())
         headers = {}
         if request.get_request_id() is not None:
             headers["X-GS2-REQUEST-ID"] = request.get_request_id()
