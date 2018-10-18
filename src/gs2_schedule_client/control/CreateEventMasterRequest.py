@@ -274,23 +274,23 @@ class CreateEventMasterRequest(Gs2BasicRequest):
         """
         return self.__type
 
-    def set_type(self, _type):
+    def set_type(self, type_):
         """
         期間を設定
-        :param _type: 期間
-        :type _type: unicode
+        :param type_: 期間
+        :type type_: unicode
         """
-        if type is not None and not (isinstance(type, str) or isinstance(type, unicode)):
-            raise TypeError(type(type))
-        self.__type = type
+        if type_ is not None and not (isinstance(type_, str) or isinstance(type_, unicode)):
+            raise TypeError(type(type_))
+        self.__type = type_
 
-    def with_type(self, _type):
+    def with_type(self, type_):
         """
         期間を設定
-        :param _type: 期間
-        :type _type: unicode
+        :param type_: 期間
+        :type type_: unicode
         :return: this
         :rtype: CreateEventMasterRequest
         """
-        self.set_type(_type)
+        self.set_type(type_)
         return self
